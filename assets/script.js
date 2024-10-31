@@ -18,15 +18,31 @@ const slides = [
 ]
 
 
+//Création des events listeners des flêches
 
-let arrow_left = document.querySelector(".arrow_left")
-arrow_left.addEventListener("click", () => {
+const arrowLeft = document.querySelector(".arrow_left")
+arrowLeft.addEventListener("click", () => {
 	console.log("vous avez cliqué sur la flêche gauche")
 })
 
-let arrow_right = document.querySelector(".arrow_right")
-arrow_right.addEventListener("click", () => {
+const arrowRight = document.querySelector(".arrow_right")
+arrowRight.addEventListener("click", () => {
 	console.log("vous avez cliqué sur la flêche droite")
 })
 
 
+//Création des dots
+const dots = document.querySelector(".dots")
+let index = 0
+
+function switch_dot(){
+	for (let image_slide = 0; image_slide < slides.length; image_slide++){
+		const dot = document.createElement("div")
+		dot.classList.add("dot")
+		dots.appendChild(dot)
+		if (image_slide == index){
+			dot.classList.add("dot_selected")
+		}
+	}
+}
+switch_dot()
