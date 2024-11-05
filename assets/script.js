@@ -39,6 +39,18 @@ function switch_dot(){
 }
 switch_dot()
 
+// Fonction pour mettre à jour l'image et le texte de la bannière
+function updateBanner() {
+	bannerImage.src = `./assets/images/slideshow/${slides[index].image}`; // Met à jour l'image
+	bannerText.innerHTML = slides[index].tagLine; // Met à jour le texte
+
+	// Met à jour les dots
+	const dots = document.querySelectorAll('.dot');
+	dots.forEach(dot => dot.classList.remove('dot_selected')); // Réinitialise les classes
+	dots[index].classList.add('dot_selected'); // Ajoute la classe active au dot courant
+}
+
+
 //Création des events listeners des flêches
 
 const arrowLeft = document.querySelector(".arrow_left")
