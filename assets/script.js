@@ -61,5 +61,6 @@ arrowLeft.addEventListener("click", () => {
 
 const arrowRight = document.querySelector(".arrow_right")
 arrowRight.addEventListener("click", () => {
-	console.log("vous avez cliqué sur la flêche droite")
+	index = (index + 1 + slides.length) % slides.length // Incrémentation et boucle
+	updateBanner() // Met à jour la bannière
 })
