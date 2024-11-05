@@ -41,13 +41,13 @@ switch_dot()
 
 // Fonction pour mettre à jour l'image et le texte de la bannière
 function updateBanner() {
-	bannerImage.src = `./assets/images/slideshow/${slides[index].image}`; // Met à jour l'image
+	bannerImage.src = `./assets/images/slideshow/${slides[index].image}` // Met à jour l'image
 	bannerText.innerHTML = slides[index].tagLine; // Met à jour le texte
 
 	// Met à jour les dots
-	const dots = document.querySelectorAll('.dot');
-	dots.forEach(dot => dot.classList.remove('dot_selected')); // Réinitialise les classes
-	dots[index].classList.add('dot_selected'); // Ajoute la classe active au dot courant
+	const dots = document.querySelectorAll('.dot')
+	dots.forEach(dot => dot.classList.remove('dot_selected')) // Réinitialise les classes
+	dots[index].classList.add('dot_selected') // Ajoute la classe active au dot courant
 }
 
 
@@ -55,7 +55,8 @@ function updateBanner() {
 
 const arrowLeft = document.querySelector(".arrow_left")
 arrowLeft.addEventListener("click", () => {
-	console.log("vous avez cliqué sur la flêche gauche")
+	index = (index - 1 + slides.length) % slides.length // Décrémentation et boucle
+	updateBanner() // Met à jour la bannière
 })
 
 const arrowRight = document.querySelector(".arrow_right")
