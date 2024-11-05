@@ -16,7 +16,28 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+//Variables pour l'état actuel
+let index = 0 // Index de l'image actuelle
+const bannerImage = document.querySelector('.banner-img') // Sélection de l'image du carrousel
+const bannerText = document.querySelector('#banner p') // Sélection du texte de la bannière
 
+
+//Création des dots
+const dotsContainer = document.querySelector(".dots")
+
+
+function switch_dot(){
+	dotsContainer.innerHTML = "" //Réinitialisation des dots
+	for (let image_slide = 0; image_slide < slides.length; image_slide++){
+		const dot = document.createElement("div")
+		dot.classList.add("dot")
+		dotsContainer.appendChild(dot)
+		if (image_slide === index){
+			dot.classList.add("dot_selected")
+		}
+	}
+}
+switch_dot()
 
 //Création des events listeners des flêches
 
@@ -29,20 +50,3 @@ const arrowRight = document.querySelector(".arrow_right")
 arrowRight.addEventListener("click", () => {
 	console.log("vous avez cliqué sur la flêche droite")
 })
-
-
-//Création des dots
-const dots = document.querySelector(".dots")
-let index = 0
-
-function switch_dot(){
-	for (let image_slide = 0; image_slide < slides.length; image_slide++){
-		const dot = document.createElement("div")
-		dot.classList.add("dot")
-		dots.appendChild(dot)
-		if (image_slide == index){
-			dot.classList.add("dot_selected")
-		}
-	}
-}
-switch_dot()
