@@ -1,5 +1,9 @@
 # **Carrousel d'Images**
 
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
 Ce projet est un carrousel d'images interactif qui permet de naviguer entre différentes diapositives. Les utilisateurs peuvent faire défiler les images en cliquant sur les flèches de navigation ou en sélectionnant des points (dots) pour afficher une image spécifique. 
 
 
